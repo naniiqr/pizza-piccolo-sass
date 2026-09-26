@@ -654,9 +654,11 @@ footer .logo-img {
 
 .testimonial-quote {
   font-size: 14px;
+  line-height: 1.4;
   color: var(--white);
   font-style: italic;
   margin: 0;
+  min-height: 40px;
 }
 
 .testimonial-highlight {
@@ -671,6 +673,10 @@ footer .logo-img {
   text-align: center;
   line-height: 1.35;
   margin: 0;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-video {
@@ -680,6 +686,7 @@ footer .logo-img {
   overflow: hidden;
   background: var(--black);
   border: 1px solid var(--border);
+  margin-top: auto;
 }
 
 .testimonial-video video {
