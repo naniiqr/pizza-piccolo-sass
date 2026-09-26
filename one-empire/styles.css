@@ -512,6 +512,82 @@ body {
   border-style: dashed;
 }
 
+/* ---------- Guest spotlight (invitado especial) ---------- */
+.guest-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.guest-photo {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dark);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-right: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.28), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px),
+    var(--black);
+}
+
+.guest-bio {
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.07), transparent 45%), var(--black-3);
+}
+
+.guest-bio .eyebrow {
+  margin-bottom: 10px;
+}
+
+.guest-bio h2 {
+  text-align: left;
+  margin: 0 0 22px;
+  font-size: clamp(28px, 3.6vw, 42px);
+}
+
+.guest-bio p {
+  color: var(--gray);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.guest-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.guest-bio p strong {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .guest-card {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-photo {
+    min-height: 280px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .guest-bio {
+    padding: 36px 28px;
+  }
+}
+
 /* ---------- Who it's for ---------- */
 .audience-grid {
   display: grid;
