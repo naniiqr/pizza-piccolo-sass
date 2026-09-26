@@ -474,7 +474,7 @@ footer .logo-img {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: brightness(0.52) saturate(0.75);
+  filter: brightness(0.88) saturate(0.92);
 }
 
 .speaker-card h4 {
