@@ -638,6 +638,75 @@ footer .logo-img {
   font-weight: 700;
 }
 
+/* ---------- Testimonios ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 44px;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  background: var(--black-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.testimonial-stars {
+  color: var(--gold-light);
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.testimonial-quote {
+  font-size: 14px;
+  color: var(--white);
+  font-style: italic;
+  margin: 0;
+}
+
+.testimonial-highlight {
+  background: var(--gold-gradient);
+  color: #1a1300;
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding: 12px 14px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.testimonial-video {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--black);
+  border: 1px solid var(--border);
+}
+
+.testimonial-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-name {
+  font-size: 12.5px;
+  color: var(--gray);
+  text-align: center;
+  margin: 0;
+}
+
 /* ---------- Pricing ---------- */
 .pricing {
   background-color: var(--black-2);
@@ -909,7 +978,8 @@ footer a {
 @media (max-width: 900px) {
   .pain-grid,
   .pricing-grid,
-  .speakers-grid {
+  .speakers-grid,
+  .testimonial-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -945,7 +1015,8 @@ footer a {
 
   .pain-grid,
   .pricing-grid,
-  .speakers-grid {
+  .speakers-grid,
+  .testimonial-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1171,6 +1242,65 @@ footer a {
           <li>No estás dispuesto a invertir en escalar tu constructora</li>
           <li>No puedes asistir presencialmente los 2 días completos</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TESTIMONIOS ========================= -->
+<section class="pain" id="testimonios">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;display:flex;">Resultados reales</p>
+    <h2 class="section-title">LO QUE DICEN LOS QUE YA <span class="gold">CONSTRUYERON SU IMPERIO</span></h2>
+    <p class="section-sub">Así lo viven los líderes que ya dieron el salto.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">[Pendiente: primera línea del testimonio]</p>
+        <p class="testimonial-highlight">[Pendiente: frase destacada]</p>
+        <div class="testimonial-video">
+          <video controls preload="metadata" playsinline>
+            <source src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a3977727b00529580a1a5fd.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="testimonial-name">[Pendiente: nombre y rol]</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">[Pendiente: primera línea del testimonio]</p>
+        <p class="testimonial-highlight">[Pendiente: frase destacada]</p>
+        <div class="testimonial-video">
+          <video controls preload="metadata" playsinline>
+            <source src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a39777294d484b9c6ad7c99.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="testimonial-name">[Pendiente: nombre y rol]</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">[Pendiente: primera línea del testimonio]</p>
+        <p class="testimonial-highlight">[Pendiente: frase destacada]</p>
+        <div class="testimonial-video">
+          <video controls preload="metadata" playsinline>
+            <source src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a397772dfe62db453e90044.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="testimonial-name">[Pendiente: nombre y rol]</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">[Pendiente: primera línea del testimonio]</p>
+        <p class="testimonial-highlight">[Pendiente: frase destacada]</p>
+        <div class="testimonial-video">
+          <video controls preload="metadata" playsinline>
+            <source src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a39777294d484b9c6ad7ca7.mov" type="video/mp4">
+          </video>
+        </div>
+        <p class="testimonial-name">[Pendiente: nombre y rol]</p>
       </div>
     </div>
   </div>
