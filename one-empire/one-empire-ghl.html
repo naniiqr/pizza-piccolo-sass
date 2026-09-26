@@ -46,6 +46,32 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Grano/textura fotográfica sutil sobre toda la página */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Textura de líneas diagonales finas, para secciones con fondo oscuro alterno */
+.texture-lines {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.045) 0px, rgba(212, 175, 55, 0.045) 1px, transparent 1px, transparent 26px);
+}
+
+/* Patrón tipo rombo/faceta dorada, para superficies "premium" (ej. tarjeta Empire Black) */
+.texture-facets {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -189,10 +215,48 @@ body {
 /* ---------- Header / Hero ---------- */
 .hero {
   padding-top: 56px;
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212, 175, 55, 0.16), transparent 70%),
     var(--black);
   border-bottom: 1px solid var(--border);
+}
+
+/* Rayos dorados estilo Art Deco, irradiando desde la parte inferior del hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -55%;
+  width: 1400px;
+  height: 1400px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(212, 175, 55, 0.1) 0deg 1.1deg, transparent 1.1deg 9deg);
+  -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Skyline decorativo — evoca el "imperio" sin depender de una foto */
+.skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo,
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -273,7 +337,8 @@ body {
 
 /* ---------- Pain / problem ---------- */
 .pain {
-  background: var(--black-2);
+  background-color: var(--black-2);
+  background-image: repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.045) 0px, rgba(212, 175, 55, 0.045) 1px, transparent 1px, transparent 26px);
 }
 
 .pain-grid {
@@ -403,7 +468,8 @@ body {
 
 /* ---------- Speakers ---------- */
 .speakers {
-  background: var(--black-2);
+  background-color: var(--black-2);
+  background-image: repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.045) 0px, rgba(212, 175, 55, 0.045) 1px, transparent 1px, transparent 26px);
 }
 
 .speakers-grid {
@@ -425,6 +491,8 @@ body {
   aspect-ratio: 1 / 1;
   background:
     radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.25), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.05) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.05) 0 1px, transparent 1px 16px),
     var(--black);
   display: flex;
   align-items: center;
@@ -542,7 +610,8 @@ body {
 
 /* ---------- Pricing ---------- */
 .pricing {
-  background: var(--black-2);
+  background-color: var(--black-2);
+  background-image: repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.045) 0px, rgba(212, 175, 55, 0.045) 1px, transparent 1px, transparent 26px);
 }
 
 .pricing-grid {
@@ -644,7 +713,10 @@ body {
 }
 
 .tier-card.black-tier {
-  background: linear-gradient(180deg, #111 0%, #000 100%);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.06) 0 1px, transparent 1px 18px),
+    linear-gradient(180deg, #111 0%, #000 100%);
   border-color: var(--gold-dark);
 }
 
@@ -750,10 +822,33 @@ body {
 /* ---------- Final CTA ---------- */
 .final-cta {
   text-align: center;
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(ellipse 70% 60% at 50% 0%, rgba(212, 175, 55, 0.18), transparent 70%),
     var(--black);
   border-top: 1px solid var(--border);
+}
+
+.final-cta::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -55%;
+  width: 1400px;
+  height: 1400px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(212, 175, 55, 0.1) 0deg 1.1deg, transparent 1.1deg 9deg);
+  -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.final-cta .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .final-cta h2 {
@@ -849,6 +944,7 @@ footer a {
     width: 100%;
   }
 }
+
 </style>
 </head>
 <body>
@@ -888,6 +984,16 @@ footer a {
       </div>
     </div>
   </div>
+
+  <svg class="skyline" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="skylineGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#d4af37" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#skylineGrad)" d="M0,200 L0,140 L40,140 L40,100 L70,100 L70,160 L110,160 L110,60 L130,60 L130,20 L150,20 L150,60 L170,60 L170,150 L210,150 L210,110 L250,110 L250,170 L290,170 L290,80 L310,80 L310,40 L330,40 L330,80 L350,80 L350,180 L400,180 L400,130 L440,130 L440,90 L460,90 L460,50 L480,50 L480,90 L500,90 L500,140 L550,140 L550,100 L590,100 L590,160 L630,160 L630,70 L650,70 L650,30 L670,30 L670,70 L690,70 L690,150 L740,150 L740,120 L780,120 L780,180 L820,180 L820,90 L840,90 L840,50 L860,50 L860,90 L880,90 L880,140 L930,140 L930,100 L970,100 L970,160 L1010,160 L1010,60 L1030,60 L1030,20 L1050,20 L1050,60 L1070,60 L1070,150 L1120,150 L1120,110 L1160,110 L1160,170 L1200,170 L1200,80 L1220,80 L1220,40 L1240,40 L1240,80 L1260,80 L1260,180 L1310,180 L1310,130 L1350,130 L1350,90 L1370,90 L1370,50 L1390,50 L1390,90 L1410,90 L1410,140 L1440,140 L1440,200 Z"/>
+  </svg>
 </header>
 
 <!-- ========================= PAIN ========================= -->
@@ -1235,6 +1341,7 @@ footer a {
 
 <script>
 // ONE EMPIRE — interactions
+
 document.addEventListener("DOMContentLoaded", function () {
   // FAQ accordion
   document.querySelectorAll(".faq-item").forEach(function (item) {
@@ -1261,6 +1368,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 </script>
 </body>
 </html>
