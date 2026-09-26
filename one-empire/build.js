@@ -36,6 +36,10 @@ let output = html
   .replace(/src="(assets\/[^"]+)"/g, (match, relPath) => {
     const dataUri = toDataUri(relPath);
     return dataUri ? `src="${dataUri}"` : match;
+  })
+  .replace(/url\("(assets\/[^"]+)"\)/g, (match, relPath) => {
+    const dataUri = toDataUri(relPath);
+    return dataUri ? `url("${dataUri}")` : match;
   });
 
 fs.writeFileSync(path.join(dir, "one-empire-ghl.html"), output);

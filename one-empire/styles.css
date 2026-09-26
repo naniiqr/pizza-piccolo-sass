@@ -210,39 +210,9 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(214, 182, 95, 0.16), transparent 70%),
-    var(--black);
+    linear-gradient(180deg, rgba(6, 6, 6, 0.6) 0%, rgba(6, 6, 6, 0.55) 45%, var(--black) 100%),
+    url("assets/backgrounds/hero-stage.webp") center 35% / cover no-repeat;
   border-bottom: 1px solid var(--border);
-}
-
-/* Rayos dorados estilo Art Deco, irradiando desde la parte inferior del hero */
-.hero::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -55%;
-  width: 1400px;
-  height: 1400px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, rgba(214, 182, 95, 0.1) 0deg 1.1deg, transparent 1.1deg 9deg);
-  -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 72%);
-  mask-image: radial-gradient(circle, #000 40%, transparent 72%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Skyline decorativo — evoca el "imperio" sin depender de una foto */
-.skyline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 130px;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .logo,
@@ -872,25 +842,9 @@ footer .logo-img {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(214, 182, 95, 0.18), transparent 70%),
-    var(--black);
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(6, 6, 6, 0.3), rgba(6, 6, 6, 0.75) 75%),
+    url("assets/backgrounds/gold-frame.webp") center / cover no-repeat;
   border-top: 1px solid var(--border);
-}
-
-.final-cta::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -55%;
-  width: 1400px;
-  height: 1400px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, rgba(214, 182, 95, 0.1) 0deg 1.1deg, transparent 1.1deg 9deg);
-  -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 72%);
-  mask-image: radial-gradient(circle, #000 40%, transparent 72%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .final-cta .wrap {
