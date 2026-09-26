@@ -520,11 +520,6 @@ footer .logo-img {
   display: block;
 }
 
-.speaker-card.tbd {
-  opacity: 0.5;
-  border-style: dashed;
-}
-
 /* ---------- Guest spotlight (invitado especial) ---------- */
 .guest-card {
   display: grid;
@@ -658,41 +653,6 @@ footer .logo-img {
   content: "✕";
   color: #6b6b6b;
   font-weight: 700;
-}
-
-/* ---------- Agenda ---------- */
-.agenda-days {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 44px;
-}
-
-.agenda-day {
-  background: var(--black-3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 30px;
-}
-
-.agenda-day .day-label {
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  font-size: 13px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.agenda-day h3 {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-.agenda-day .time {
-  color: var(--gray);
-  font-size: 14px;
-  margin-bottom: 18px;
 }
 
 /* ---------- Pricing ---------- */
@@ -989,7 +949,6 @@ footer a {
   .process-grid,
   .speakers-grid,
   .audience-grid,
-  .agenda-days,
   .venue-grid {
     grid-template-columns: 1fr;
   }
