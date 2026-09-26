@@ -82,6 +82,7 @@ a {
 section {
   padding: 88px 0;
   position: relative;
+  scroll-margin-top: var(--sticky-height, 42px);
 }
 
 h1, h2, h3, h4 {
@@ -201,7 +202,7 @@ h1, h2, h3, h4 {
 }
 
 body {
-  padding-top: 42px;
+  padding-top: var(--sticky-height, 42px);
 }
 
 /* ---------- Header / Hero ---------- */
@@ -896,13 +897,13 @@ footer a {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .pain-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .speakers-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .compare,
   .process-grid,
-  .speakers-grid,
   .audience-grid,
   .venue-grid {
     grid-template-columns: 1fr;
@@ -932,7 +933,8 @@ footer a {
   }
 
   .pain-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .speakers-grid {
     grid-template-columns: 1fr;
   }
 
