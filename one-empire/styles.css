@@ -1,24 +1,31 @@
 /* ==========================================================================
-   ONE EMPIRE — Landing page styles
-   Identidad: negro + dorado
+   ONE REVOLUTION — Landing page styles
+   Identidad: negro + plateado + rojo (muestreado del logo One Revolution)
    ========================================================================== */
 
 :root {
-  /* Dorado tomado directamente del logo One Empire (muestreado del archivo) */
   --black: #060606;
   --black-2: #0f0f0f;
   --black-3: #171717;
-  --gold-lightest: #f5da75;
-  --gold-light: #eecf6a;
-  --gold: #d6b65f;
-  --gold-mid: #ad8b39;
-  --gold-dark: #8f6c1f;
-  --white: #f5f1e6;
+  /* Rojo — acento principal / energía / CTAs */
+  --red-lightest: #e4393c;
+  --red-light: #d01a1e;
+  --red: #b91619;
+  --red-mid: #8a0f12;
+  --red-dark: #3e0708;
+  /* Plateado — estructura / detalle metálico premium */
+  --silver-lightest: #f1eeee;
+  --silver-light: #cec6c4;
+  --silver: #9b918f;
+  --silver-mid: #7f7573;
+  --silver-dark: #433d3b;
+  --white: #f5f4f2;
   --gray: #a8a29a;
-  --border: rgba(214, 182, 95, 0.25);
+  --border: rgba(206, 198, 196, 0.22);
   --radius: 14px;
   --max-width: 1180px;
-  --gold-gradient: linear-gradient(180deg, #f5da75 0%, #eecf6a 20%, #d6b65f 45%, #ad8b39 75%, #8f6c1f 100%);
+  --red-gradient: linear-gradient(180deg, #e4393c 0%, #d01a1e 20%, #b91619 45%, #8a0f12 75%, #3e0708 100%);
+  --silver-gradient: linear-gradient(180deg, #f1eeee 0%, #cec6c4 30%, #9b918f 60%, #7f7573 80%, #433d3b 100%);
 }
 
 * {
@@ -54,14 +61,14 @@ body::before {
 /* Textura de líneas diagonales finas, para secciones con fondo oscuro alterno */
 .texture-lines {
   background-image:
-    repeating-linear-gradient(135deg, rgba(214, 182, 95, 0.045) 0px, rgba(214, 182, 95, 0.045) 1px, transparent 1px, transparent 26px);
+    repeating-linear-gradient(135deg, rgba(206, 198, 196, 0.05) 0px, rgba(206, 198, 196, 0.05) 1px, transparent 1px, transparent 26px);
 }
 
-/* Patrón tipo rombo/faceta dorada, para superficies "premium" (ej. tarjeta Empire Black) */
+/* Patrón tipo rombo/faceta plateada, para superficies "premium" (ej. tarjeta Empire Black) */
 .texture-facets {
   background-image:
-    repeating-linear-gradient(45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px),
-    repeating-linear-gradient(-45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px);
+    repeating-linear-gradient(45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px);
 }
 
 img {
@@ -101,7 +108,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red-lightest);
   margin-bottom: 14px;
 }
 
@@ -110,11 +117,11 @@ h1, h2, h3, h4 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gold-gradient);
+  background: var(--red-gradient);
 }
 
-.gold {
-  background: var(--gold-gradient);
+.accent {
+  background: var(--red-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -155,26 +162,26 @@ h1, h2, h3, h4 {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-gold {
-  background: var(--gold-gradient);
-  color: #1a1300;
-  border-color: #8f6c1f;
-  box-shadow: 0 8px 20px rgba(214, 182, 95, 0.25);
+.btn-red {
+  background: var(--red-gradient);
+  color: #fff;
+  border-color: var(--red-dark);
+  box-shadow: 0 8px 20px rgba(228, 57, 60, 0.3);
 }
 
-.btn-gold:hover {
+.btn-red:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(214, 182, 95, 0.35);
+  box-shadow: 0 14px 28px rgba(228, 57, 60, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold-light);
-  border-color: var(--gold);
+  color: var(--silver-light);
+  border-color: var(--silver-mid);
 }
 
 .btn-outline:hover {
-  background: rgba(214, 182, 95, 0.08);
+  background: rgba(206, 198, 196, 0.08);
 }
 
 .btn-block {
@@ -188,8 +195,8 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   z-index: 999;
-  background: var(--gold-gradient);
-  color: #1a1300;
+  background: var(--red-gradient);
+  color: #fff;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -210,10 +217,17 @@ body {
   padding-top: 56px;
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(6, 6, 6, 0.6) 0%, rgba(6, 6, 6, 0.55) 45%, var(--black) 100%),
-    url("assets/backgrounds/hero-stage.webp") center 35% / cover no-repeat;
+  background: linear-gradient(180deg, rgba(40, 6, 7, 0.55) 0%, rgba(6, 6, 6, 0.6) 45%, var(--black) 100%);
   border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("assets/backgrounds/hero-stage.webp") center 35% / cover no-repeat;
+  filter: grayscale(0.85) brightness(0.8) contrast(1.1);
 }
 
 .logo,
@@ -289,7 +303,7 @@ footer .logo-img {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red-lightest);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -302,7 +316,7 @@ footer .logo-img {
 /* ---------- Pain / problem ---------- */
 .pain {
   background-color: var(--black-2);
-  background-image: repeating-linear-gradient(135deg, rgba(214, 182, 95, 0.045) 0px, rgba(214, 182, 95, 0.045) 1px, transparent 1px, transparent 26px);
+  background-image: repeating-linear-gradient(135deg, rgba(206, 198, 196, 0.05) 0px, rgba(206, 198, 196, 0.05) 1px, transparent 1px, transparent 26px);
 }
 
 .pain-grid {
@@ -339,7 +353,7 @@ footer .logo-img {
 }
 
 .pain-closer strong {
-  color: var(--gold-light);
+  color: var(--red-lightest);
 }
 
 /* ---------- Before / after ---------- */
@@ -361,8 +375,8 @@ footer .logo-img {
 }
 
 .compare-card.after {
-  background: linear-gradient(180deg, rgba(214, 182, 95, 0.12), rgba(214, 182, 95, 0.02));
-  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(206, 198, 196, 0.12), rgba(206, 198, 196, 0.02));
+  border-color: var(--silver-mid);
 }
 
 .compare-card h4 {
@@ -375,7 +389,7 @@ footer .logo-img {
 }
 
 .compare-card.after h4 {
-  color: var(--gold);
+  color: var(--red-lightest);
 }
 
 .compare-card ul {
@@ -415,7 +429,7 @@ footer .logo-img {
   font-family: "Oswald", Arial, sans-serif;
   font-size: 42px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--red-lightest);
   margin-bottom: 10px;
 }
 
@@ -433,7 +447,7 @@ footer .logo-img {
 /* ---------- Speakers ---------- */
 .speakers {
   background-color: var(--black-2);
-  background-image: repeating-linear-gradient(135deg, rgba(214, 182, 95, 0.045) 0px, rgba(214, 182, 95, 0.045) 1px, transparent 1px, transparent 26px);
+  background-image: repeating-linear-gradient(135deg, rgba(206, 198, 196, 0.05) 0px, rgba(206, 198, 196, 0.05) 1px, transparent 1px, transparent 26px);
 }
 
 .speakers-grid {
@@ -456,14 +470,14 @@ footer .logo-img {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 30%, rgba(214, 182, 95, 0.25), transparent 60%),
-    repeating-linear-gradient(45deg, rgba(214, 182, 95, 0.05) 0 1px, transparent 1px 16px),
-    repeating-linear-gradient(-45deg, rgba(214, 182, 95, 0.05) 0 1px, transparent 1px 16px),
+    radial-gradient(circle at 50% 30%, rgba(206, 198, 196, 0.22), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(206, 198, 196, 0.05) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(-45deg, rgba(206, 198, 196, 0.05) 0 1px, transparent 1px 16px),
     var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold-dark);
+  color: var(--silver-dark);
   font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -475,7 +489,7 @@ footer .logo-img {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: brightness(0.88) saturate(0.92);
+  filter: grayscale(0.7) brightness(0.8) contrast(1.1) saturate(0.6);
 }
 
 .speaker-card h4 {
@@ -507,15 +521,15 @@ footer .logo-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold-dark);
+  color: var(--silver-dark);
   font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-right: 1px solid var(--border);
   background:
-    radial-gradient(circle at 50% 20%, rgba(214, 182, 95, 0.28), transparent 60%),
-    repeating-linear-gradient(45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px),
-    repeating-linear-gradient(-45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px),
+    radial-gradient(circle at 50% 20%, rgba(206, 198, 196, 0.25), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px),
     var(--black);
 }
 
@@ -598,7 +612,7 @@ footer .logo-img {
 }
 
 .audience-card.yes h4 {
-  color: var(--gold);
+  color: var(--red-lightest);
 }
 
 .audience-card ul {
@@ -617,7 +631,7 @@ footer .logo-img {
 
 .audience-card.yes li::before {
   content: "✓";
-  color: var(--gold);
+  color: var(--red-lightest);
   font-weight: 700;
 }
 
@@ -647,7 +661,7 @@ footer .logo-img {
 }
 
 .testimonial-stars {
-  color: var(--gold-light);
+  color: var(--silver-light);
   font-size: 18px;
   letter-spacing: 3px;
 }
@@ -662,8 +676,8 @@ footer .logo-img {
 }
 
 .testimonial-highlight {
-  background: var(--gold-gradient);
-  color: #1a1300;
+  background: var(--red-gradient);
+  color: #fff;
   font-weight: 700;
   font-size: 12.5px;
   text-transform: uppercase;
@@ -728,8 +742,8 @@ footer .logo-img {
 }
 
 .tier-card.featured {
-  border-color: var(--gold);
-  background: linear-gradient(180deg, rgba(214, 182, 95, 0.1), var(--black-3) 40%);
+  border-color: var(--red);
+  background: linear-gradient(180deg, rgba(228, 57, 60, 0.12), var(--black-3) 40%);
   transform: translateY(-8px);
 }
 
@@ -738,8 +752,8 @@ footer .logo-img {
   top: -13px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gold-gradient);
-  color: #1a1300;
+  background: var(--red-gradient);
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -765,7 +779,7 @@ footer .logo-img {
   font-family: "Oswald", Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
-  color: var(--gold-light);
+  color: var(--red-lightest);
   margin-bottom: 2px;
 }
 
@@ -803,20 +817,20 @@ footer .logo-img {
 
 .tier-features li::before {
   content: "✓";
-  color: var(--gold);
+  color: var(--red-lightest);
   flex-shrink: 0;
 }
 
 .tier-card.black-tier {
   background-image:
-    repeating-linear-gradient(45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px),
-    repeating-linear-gradient(-45deg, rgba(214, 182, 95, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(206, 198, 196, 0.06) 0 1px, transparent 1px 18px),
     linear-gradient(180deg, #111 0%, #000 100%);
-  border-color: var(--gold-dark);
+  border-color: var(--silver-mid);
 }
 
 .tier-card.black-tier .tier-name {
-  color: var(--gold);
+  color: var(--silver-light);
 }
 
 .pricing-note {
@@ -854,7 +868,7 @@ footer .logo-img {
 }
 
 .venue-info .address {
-  color: var(--gold-light);
+  color: var(--silver-light);
   font-weight: 600;
   margin-bottom: 18px;
 }
@@ -891,7 +905,7 @@ footer .logo-img {
 }
 
 .faq-question .plus {
-  color: var(--gold);
+  color: var(--red-lightest);
   font-size: 22px;
   flex-shrink: 0;
   transition: transform 0.2s ease;
@@ -919,10 +933,17 @@ footer .logo-img {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(6, 6, 6, 0.3), rgba(6, 6, 6, 0.75) 75%),
-    url("assets/backgrounds/gold-frame.webp") center / cover no-repeat;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(80, 8, 10, 0.25), rgba(6, 6, 6, 0.82) 75%), var(--black);
   border-top: 1px solid var(--border);
+}
+
+.final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("assets/backgrounds/gold-frame.webp") center / cover no-repeat;
+  filter: grayscale(1) brightness(0.65) contrast(1.15);
 }
 
 .final-cta .wrap {
@@ -966,7 +987,7 @@ footer a {
 
 /* ---------- Placeholder notice ---------- */
 .todo {
-  outline: 1px dashed var(--gold-dark);
+  outline: 1px dashed var(--red-mid);
   outline-offset: 3px;
 }
 
